@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countries List</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="title">Where in the world?</h1>
+                <button class="dark-mode-toggle" onclick="toggleDarkMode()">
+                    <span id="mode-icon"><i class="fas fa-moon"></i></span>
+                    <span id="mode-text">Dark Mode</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="controls">
+            <div class="search-container">
+                <span class="search-icon">🔍</span>
+                <input type="text" class="search-input" id="searchInput" placeholder="Search for a country..." >
+            </div>
+            <div class="filter-dropdown">
+                <select class="filter-select" id="regionFilter">
+                    <option value="">Filter by Region</option>
+                    <option value="Africa">Africa</option>
+                    <option value="Americas">Americas</option>
+                    <option value="Asia">Asia</option>
+                    <option value="Europe">Europe</option>
+                    <option value="Oceania">Oceania</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="loading" class="loading" style="display: none;">
+            Loading countries...
+        </div>
+
+        <div id="error" class="error" style="display: none;">
+            Failed to load countries. Please try again.
+        </div>
+
+        <div class="countries-grid" id="countriesGrid">
+        </div>
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+</html>
